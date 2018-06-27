@@ -54,33 +54,18 @@ for (var i = 0; i<thumb.length; i++){
 for (var i = 0; i < thumb.length; i++){
     var counterDiv = document.createElement('div');
     counterDiv.className = 'counter';
-    // counterDiv.innerHTML = 0;
+    counterDiv.innerHTML = 0;
     thumb[i].appendChild(counterDiv);
-
 }
 
-var counterList = document.getElementsByClassName('counter');
-// console.log(counterList); length 3;
-
-
+var origin = 0;
 function dislikeCounter(){
     // var originalCount = this.querySelectorAll('.counter')[0];
+    origin += 1;
     var newCount = this.querySelectorAll('.counter')[0];
-    newCount += 1;
-    newCount.innerHTML = newCount;
+    newCount.innerHTML = origin;
 } 
-
-
-
-
-
-// var origin = 0;
-// function dislikeCounter(){
-//     // var originalCount = this.querySelectorAll('.counter')[0];
-//     origin += 1;
-//     var newCount = this.querySelectorAll('.counter')[0];
-//     newCount.innerHTML = origin;
-// } This setup returns a cumulative add for all buttons pushed
+// This setup returns a cumulative add for all buttons pushed
 
 
 // function dislikeCounter(){
@@ -89,3 +74,29 @@ function dislikeCounter(){
 //     dislikes.innerHTML = dislikes;
 // }
 
+
+
+// thumb[0].addEventListener('click', dislikeCounter0);
+// thumb[1].addEventListener('click', dislikeCounter1);
+// thumb[2].addEventListener('click', dislikeCounter2);
+
+// var counterDiv0 = document.createElement('div');
+// counterDiv0.className = 'counter0';
+// thumb[0].appendChild(counterDiv);
+// var class0 = document.getElementsByClassName('counter0')
+
+// var counterDiv1 = document.createElement('div');
+// counterDiv1.className = 'counter1';
+// thumb[1].appendChild(counterDiv1);
+// var class1 = document.getElementsByClassName('counter1')
+
+// var counterDiv2 = document.createElement('div');
+// counterDiv2.className = 'counter2';
+// thumb[2].appendChild(counterDiv2);
+// var class2 = document.getElementsByClassName('counter2')
+
+// var origin0 = 0;
+// function dislikeCounter0(){
+//     origin0 += 1;
+//     class0.innerHTML = origin0;
+// }
