@@ -44,6 +44,20 @@ function showItem(){
 }
 
 /*3) to the thumbs down icon that will add a count (counter) for each time the icon is clicked on.*/
+
+// var thumbImage = document.getElementsByTagName('i');
+// console.log(thumbImage); 
+
+// instead of writing 3 for loops, you can use just one to add the event listener to the thumb img and also create children elements for the counter
+// then in your function, you just want to increment the innerHTML...
+
+// give it a shot and we can review this in class today
+
+// var thumb = document.getElementsByClassName('thumb');
+// console.log(thumb);
+
+// thumb.addEventListener('click', plus);
+
 var thumb = document.getElementsByClassName('thumb');
 console.log(thumb);
 
@@ -53,28 +67,56 @@ for (var i = 0; i<thumb.length; i++){
 
 for (var i = 0; i < thumb.length; i++){
     var counterDiv = document.createElement('div');
-    counterDiv.className = 'counter';
+    counterDiv.className = 'counterClass';
     counterDiv.innerHTML = 0;
     thumb[i].appendChild(counterDiv);
 }
 
-var origin = 0;
 function dislikeCounter(){
-    // var originalCount = this.querySelectorAll('.counter')[0];
-    origin += 1;
-    var newCount = this.querySelectorAll('.counter')[0];
-    newCount.innerHTML = origin;
-} 
-// This setup returns a cumulative add for all buttons pushed
+    var counterOrigin = this.querySelectorAll('.counterClass')[0];
+    counterOrigin.innerHTML++;
+}
 
-
-// function dislikeCounter(){
-//     var dislikes = this.querySelectorAll('.counter')[0];
-//     dislikes.style.counterIncrement = 'subsection'; 
-//     dislikes.innerHTML = dislikes;
+// for (var i = 0; i < thumb.length; i++){
+//     var counterResult = document.createElement('div');
+//     counterResult.className = 'counterResult';
+//     thumb[i].appendChild(counterResult);
 // }
 
 
+
+
+
+
+//****************** Attempt *************************** */
+
+// var thumb = document.getElementsByClassName('thumb');
+// console.log(thumb);
+
+// for (var i = 0; i<thumb.length; i++){
+//     thumb[i].addEventListener('click', dislikeCounter);
+// }
+
+// for (var i = 0; i < thumb.length; i++){
+//     var counterDiv = document.createElement('div');
+//     counterDiv.className = 'counter';
+//     counterDiv.innerHTML = 0;
+//     thumb[i].appendChild(counterDiv);
+// }
+
+// var origin = 0;
+// function dislikeCounter(){
+//     origin += 1;
+//     var newCount = this.querySelectorAll('.counter')[0];
+//     newCount.innerHTML = origin;
+// } 
+// This setup returns a cumulative add for all buttons pushed
+
+//******************  Long-Hand SetUp  ********************** */
+
+
+// var thumb = document.getElementsByClassName('thumb');
+// console.log(thumb);
 
 // thumb[0].addEventListener('click', dislikeCounter0);
 // thumb[1].addEventListener('click', dislikeCounter1);
